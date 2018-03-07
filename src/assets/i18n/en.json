@@ -1,0 +1,18 @@
+{
+    "ENABLED": "Enabled",
+    "DISABLED": "Disabled",
+    "SAVE": "Save",
+    "BACK": "Back",
+    "CREATE": "Create",
+    "CHANGE_LANGUAGE": "Change Language",
+    "PRESELECTED": "Pre selected",
+    "CURRENT_ASSOCIATED": "Currently Associated",
+    "PARENT": "Parent",
+    "CANCEL": "Cancel",
+    "ADD": "Add",
+    "SUCCESS_SAVE": "Item saved successfully",
+    "SUCCESS_ADD": "Item added successfully",
+    "ERROR_SAVE": "It have occurred an error. Item wasn't saved",
+    "SUCCESS_DELETE": "Item deleted successfully",
+    "ERROR_DELETE": "It have occurred an error. Item wasn't deleted"
+}

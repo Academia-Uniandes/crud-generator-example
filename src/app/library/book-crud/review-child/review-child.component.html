@@ -1,0 +1,15 @@
+<div class="child">
+    <div class="row">
+ 
+        <button class="btn btn-success add-child-btn" type="button" (click)="isShowedCreateReviewForm=!isShowedCreateReviewForm"><span class="oi oi-briefcase"></span> {{'CREATE' | translate}} Review</button>
+    </div>
+ 
+    <div class="row search-combo-box" *ngIf="isShowedCreateReviewForm">
+        <app-review-crud-detail (closeDetail)="isShowedCreateReviewForm=$event"></app-review-crud-detail>
+    </div>
+    <div class="row child-cmp">
+        <h4>Reviews</h4>
+        <app-review-crud-list [filtersFetch]="parent" [isOnlyRead]="true" [reviewInputItems]="reviewInputItems" ></app-review-crud-list>
+    </div>
+
+</div>

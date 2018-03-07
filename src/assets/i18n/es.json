@@ -1,0 +1,19 @@
+{
+    "ENABLED": "Habilitado",
+    "DISABLED": "Deshabilitado",
+    "SAVE": "Guardar",
+    "BACK": "Regresar",
+    "CREATE": "Crear",
+    "CHANGE_LANGUAGE": "Cambiar el idioma",
+    "PRESELECTED": "Pre seleccionado",
+    "CURRENT_ASSOCIATED": "Actualmente Asociado",
+    "PARENT": "Padre",
+    "CANCEL": "Cancelar",
+    "ADD": "Añadir",
+    "SUCCESS_SAVE": "Elemento guardado satisfactoriamente",
+    "SUCCESS_ADD": "Elemento añadido satisfactoriamente",
+    "ERROR_SAVE": "Error al guardar el elemento",
+    "SUCCESS_DELETE": "Elemento eliminado satisfactoriamente",
+    "ERROR_DELETE": "Error al eliminar el elemento"
+
+}

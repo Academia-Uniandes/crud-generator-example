@@ -1,0 +1,10 @@
+<h1>Book Crud</h1><span class="badge badge-warning">Mock {{'ENABLED' | translate}}</span><div class="row" *ngIf="!showDetail"><div class="col-md-12 create-btn" ><button type="button" class="btn btn-primary" (click)="showDetail=!showDetail; bookSelected=undefined"><span class="oi oi-plus"></span> {{'CREATE' | translate}}</button></div></div>
+<div class="row" *ngIf="showDetail"><div class="col-md-12 create-btn" ><button type="button" class="btn btn-default" (click)="showDetail=!showDetail; bookSelected=undefined"><span class="oi oi-arrow-left"></span> {{'BACK' | translate}}</button></div></div><div *ngIf="!showDetail">
+    <app-book-crud-list (bookSelected)="setBook($event)"></app-book-crud-list>
+</div>
+<div class="row" *ngIf="showDetail">
+    <div class="col-md-12" *ngIf="bookSelected; else createTemplate"><app-book-crud-detail [bookFromParent]="bookSelected"></app-book-crud-detail></div>
+    <ng-template #createTemplate>
+    <div class="col-md-12"><app-book-crud-detail ></app-book-crud-detail></div>  
+    </ng-template>
+</div>  

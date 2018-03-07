@@ -1,0 +1,40 @@
+<div class="col-sm-12 col-md-8 offset-md-2">  <form [formGroup]="formGroup" (ngSubmit)="saveBook(book)">
+	 
+	 <div class="form-group">
+      <label for="form-name">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="book.name" id="form-name" name="name" placeholder="Name" formControlName="nameCtrl" required>
+     </div>
+	 
+	 <div class="form-group">
+      <label for="form-author">Author</label>
+      <input type="text" class="form-control" [(ngModel)]="book.author" id="form-author" name="author" placeholder="Author" formControlName="authorCtrl" required>
+     </div>
+	 
+	 <div class="form-group">
+      <label for="form-price">Price</label>
+      <input type="text" class="form-control" [(ngModel)]="book.price" id="form-price" name="price" placeholder="Price" formControlName="priceCtrl" required>
+     </div>
+	 
+
+	<div class="form-group">
+      <label for="form-profile">Editorial</label>
+      <app-search-combo-box-generic  [preSelectedItem]="book.editorial" [configModel]="searchComboEditorialModel" (itemSelected)="book.editorial=$event.item" [validators]="editorialSearchBoxValidators"></app-search-combo-box-generic>  
+    </div>
+	
+	<div class="form-group" *ngIf="isEditForm">
+      <tabset>
+        <tab heading="Review" id="tabreview">
+          <app-review-child [parent]="book" [reviewInputItems]="reviews" (reviewOutputItems)="bookReviews=$event"></app-review-child>
+        </tab>
+        <tab heading="Author" id="tabauthor">
+          <app-author-child [parent]="book" [authorInputItems]="authors" (authorOutputItems)="bookAuthors=$event"></app-author-child>
+        </tab>
+    
+      </tabset>
+    </div>
+    
+    
+    
+    
+<button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">{{'SAVE' | translate}}</button>  </form>
+</div>

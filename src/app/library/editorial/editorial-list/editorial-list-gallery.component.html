@@ -1,0 +1,19 @@
+<div class='card-container'>
+            <div class="card" *ngFor="let item of editorials">                   
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.name}}</p>
+                        <p class="card-btn" *ngIf="!isOnlyRead">						<a [routerLink]="['../edit', item.id]" class="btn btn-primary btn-sm" role="button"><span class="oi oi-pencil"></span></a>                        </p>
+                    </div>
+            </div>
+</div>
+<div *ngIf="totalRecords > 0" style="display:flex;justify-content: center;">
+        <academia-pagination  [collectionSize]="totalRecords" [pageSize]="pageSize" [page]="page" (pageChanged)="pageChanged($event)"></academia-pagination>
+</div>
+<div class='card-container' *ngIf="!editorials">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-text">No items for this collection</h5>
+                </div>
+            </div>
+</div>

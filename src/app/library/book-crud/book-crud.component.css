@@ -1,0 +1,9 @@
+/* Styles for BookCrud */
+
+.create-btn{
+    padding: 20px;
+}
+
+app-product-crud-list{
+    padding: 20px;
+}

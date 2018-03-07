@@ -1,0 +1,27 @@
+<div class="col-sm-12 col-md-8 offset-md-2">  <form [formGroup]="formGroup" (ngSubmit)="saveEditorial(editorial)">
+	 
+	 <div class="form-group">
+      <label for="form-name">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="editorial.name" id="form-name" name="name" placeholder="Name" formControlName="nameCtrl" required>
+     </div>
+	 
+	 <div class="form-group">
+      <label for="form-office">Office</label>
+      <input type="text" class="form-control" [(ngModel)]="editorial.office" id="form-office" name="office" placeholder="Office" formControlName="officeCtrl" required>
+     </div>
+	 
+	 <div class="form-group">
+      <label for="form-phone">Phone</label>
+      <input type="text" class="form-control" [(ngModel)]="editorial.phone" id="form-phone" name="phone" placeholder="Phone" formControlName="phoneCtrl" required>
+     </div>
+	 
+	 <div class="form-group">
+      <label for="form-email">Email</label>
+      <input type="text" class="form-control" [(ngModel)]="editorial.email" id="form-email" name="email" placeholder="Email" formControlName="emailCtrl" >
+     </div>
+	 
+
+    
+    
+<button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">{{'SAVE' | translate}}</button><button *ngIf="this.isEditForm" type="button" class="btn btn-default" (click)="goBack()">{{'CANCEL' | translate}}</button>  </form>
+</div>

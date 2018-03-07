@@ -1,0 +1,10 @@
+<h1>Author Crud</h1><span class="badge badge-warning">Mock {{'ENABLED' | translate}}</span><div class="row" *ngIf="!showDetail"><div class="col-md-12 create-btn" ><button type="button" class="btn btn-primary" (click)="showDetail=!showDetail; authorSelected=undefined"><span class="oi oi-plus"></span> {{'CREATE' | translate}}</button></div></div>
+<div class="row" *ngIf="showDetail"><div class="col-md-12 create-btn" ><button type="button" class="btn btn-default" (click)="showDetail=!showDetail; authorSelected=undefined"><span class="oi oi-arrow-left"></span> {{'BACK' | translate}}</button></div></div><div *ngIf="!showDetail">
+    <app-author-crud-list (authorSelected)="setAuthor($event)"></app-author-crud-list>
+</div>
+<div class="row" *ngIf="showDetail">
+    <div class="col-md-12" *ngIf="authorSelected; else createTemplate"><app-author-crud-detail [authorFromParent]="authorSelected"></app-author-crud-detail></div>
+    <ng-template #createTemplate>
+    <div class="col-md-12"><app-author-crud-detail ></app-author-crud-detail></div>  
+    </ng-template>
+</div>  

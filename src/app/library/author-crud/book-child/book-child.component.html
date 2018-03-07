@@ -1,0 +1,39 @@
+<div class="child">
+    <div class="row">
+        <button class="btn btn-primary add-child-btn" type="button" (click)="isShowedSearchBoxBook=!isShowedSearchBoxBook" ><span class="oi oi-plus"></span> {{'ADD' | translate}}</button>
+    </div>
+    <div class="row search-combo-box" *ngIf="isShowedSearchBoxBook">
+        <form  (ngSubmit)="addBook(book)">
+            <div class="form-group">
+                <div class="col-xs-10 vertical-bottom ">
+                        <label for="form-name">Select an Book:</label>
+                        <app-search-combo-box-generic  [configModel]="searchComboBOOKModel" (itemSelected)="bookSelected=$event" [validators]="bookSearchBoxValidators"></app-search-combo-box-generic>  
+                </div>
+                <div class="col-xs-1 vertical-bottom">
+                    <button class="btn btn-success btn-small" type="submit"><span class="oi oi-plus"></span></button>
+                </div>  
+            </div>
+        </form>
+    </div>
+    <div class="row child-cmp" *ngIf="booksSelected.length > 0">
+            <h4>{{'PRESELECTED' | translate}} books</h4>
+            <div class="card-container">
+                <div class="card" *ngFor="let item of booksSelected">                   
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.name}}</p>
+                    </div>
+                </div>
+            </div>     
+    </div>
+    <div class="row child-cmp">
+        <h4>{{'CURRENT_ASSOCIATED' | translate}} books</h4>
+        <app-book-crud-list [filtersFetch]="parent" [isOnlyRead]="true" (bookOutputItems)="bookItemsFromChild=$event"></app-book-crud-list>
+    </div>
+    <!-- only for debug purposes -->
+    <div class="row child-cmp">
+        <h4><i>{{'PARENT' | translate}}</i></h4>
+        <pre>{{author | json}}</pre>
+    </div> 
+
+</div>
